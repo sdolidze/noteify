@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Platform,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
+import Counter from './Counter';
 
 const instructions = Platform.select({
   ios:
@@ -15,22 +16,21 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to Noteify!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.tsx
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
-    );
-  }
+export function App() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.welcome}>
+        Welcome to Noteify!
+      </Text>
+      <Counter />
+      <Text style={styles.instructions}>
+        To get started, edit App.tsx
+      </Text>
+      <Text style={styles.instructions}>
+        {instructions}
+      </Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -51,3 +51,5 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+export default App;
